@@ -1,8 +1,11 @@
-from stats import get_num_words
+from stats import print_report
+import sys
 
-def main():
-    file_path = "books/frankenstein.txt"
-    return get_num_words(file_path)
-    
+def main(path_to_book):
+    return print_report(path_to_book)
 
-main()
+if len(sys.argv) > 1:
+    main(sys.argv[1])
+else:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
